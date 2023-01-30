@@ -28,8 +28,10 @@ export default function Layout({ title, children }) {
                 </div>
             </nav>
         </header>
-      <main className='container m-auto mt-4 px-4'>{children}</main>
-      <footer className='flex justify-center items-center h-10 shadow-inner'>footer</footer>
+
+        <main className='container m-auto mt-4 px-4'>{children}</main>
+
+        <footer className='flex justify-center items-center h-10 shadow-inner'>Copyrigth 2023 Pablo Carro</footer>
       </div>
 
     </>
