@@ -20,11 +20,11 @@ export default function ShippingScreen() {
   const router = useRouter();
 
   useEffect(() => {
-/*     setValue('fullName', shippingAddress.fullName);
+    setValue('fullName', shippingAddress.fullName);
     setValue('address', shippingAddress.address);
     setValue('city', shippingAddress.city);
     setValue('postalCode', shippingAddress.postalCode);
-    setValue('country', shippingAddress.country); */
+    setValue('country', shippingAddress.country);
   }, [setValue, shippingAddress]);
 
   const submitHandler = ({ fullName, address, city, postalCode, country }) => {
