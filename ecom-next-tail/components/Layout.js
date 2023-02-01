@@ -4,8 +4,11 @@ import Link from 'next/link'
 import { Store } from '@/utils/Store';
 import { ToastContainer } from 'react-toastify';
 import { useContext, useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
+import { Menu } from '@headlessui/react';
 import 'react-toastify/dist/ReactToastify.css'
+import DropdownLink from './DropdownLink';
+import Cookies from 'js-cookie';
 
 export default function Layout({ title, children }) {
 
@@ -18,6 +21,11 @@ export default function Layout({ title, children }) {
       setcartItemsCount(cart.cartItems.reduce((a,c) => a + c.quantity, 0))
     }, [cart.cartItems]);
 
+    const logoutClickHandler = () => {
+      Cookies.remove('cart')
+      dispatch({ type: 'CART_RESET'})
+      signOut({ callbackUrl: '/login'})
+    } 
 
   return (
     <>
@@ -49,7 +57,22 @@ export default function Layout({ title, children }) {
                       status === 'loading' ? (
                         'Loading'
                       ) : session?.user? (
-                        session.user.name
+                        <Menu as='div' className='relative inline-block'>
+                          <Menu.Button className={'text-blue-600'}>
+                            {session.user.name}
+                          </Menu.Button>
+                          <Menu.Items className={'absolute right-0 w-56 origin-top-right bg-white shadow-lg'}>
+                            <Menu.Item>
+                              <DropdownLink className='dropdown-link' href='/profile'>Profile</DropdownLink>
+                            </Menu.Item>
+                            <Menu.Item>
+                              <a href="#" onClick={logoutClickHandler}>Order History</a>
+                            </Menu.Item>
+                            <Menu.Item>
+                              <DropdownLink className='dropdown-link' href='/order-history'>Logout</DropdownLink>
+                            </Menu.Item>
+                          </Menu.Items>
+                        </Menu>
                       ) : (
                         <Link href={'/login'}>
                         <p className='p-2'>Login</p>
