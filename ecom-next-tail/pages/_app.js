@@ -1,22 +1,25 @@
-import '../styles/globals.css';
+import '@/styles/globals.css';
 import { SessionProvider, useSession } from 'next-auth/react';
-import { StoreProvider } from '../utils/Store';
+import { StoreProvider } from '@/utils/Store';
 import { useRouter } from 'next/router';
+//import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
-export default function App({ Component, pageProps: { session, ...pageProps} }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-    <StoreProvider>
-        {Component.auth ? (
-          <Auth adminOnly={Component.auth.adminOnly}>
+      <StoreProvider>
+        {/* <PayPalScriptProvider deferLoading={true}> */}
+          {Component.auth ? (
+            <Auth adminOnly={Component.auth.adminOnly}>
+              <Component {...pageProps} />
+            </Auth>
+          ) : (
             <Component {...pageProps} />
-          </Auth>
-        ) : (
-          <Component {...pageProps} />
-        )}
-    </StoreProvider>
-  </SessionProvider>
-  )
+          )}
+        {/* </PayPalScriptProvider> */}
+      </StoreProvider>
+    </SessionProvider>
+  );
 }
 
 function Auth({ children, adminOnly }) {
@@ -36,3 +39,5 @@ function Auth({ children, adminOnly }) {
 
   return children;
 }
+
+export default MyApp;

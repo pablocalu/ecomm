@@ -5,10 +5,10 @@ import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import CheckoutWizard from '../components/CheckoutWizard';
-import Layout from '../components/Layout';
-import { getError } from '../utils/error';
-import { Store } from '../utils/Store';
+import CheckoutWizard from '@/components/CheckoutWizard';
+import Layout from '@/components/Layout';
+import { getError } from '@/utils/errors';
+import { Store } from '@/utils/Store';
 
 export default function PlaceOrderScreen() {
   const { state, dispatch } = useContext(Store);
@@ -107,7 +107,7 @@ export default function PlaceOrderScreen() {
                     <tr key={item._id} className="border-b">
                       <td>
                         <Link href={`/product/${item.slug}`}>
-                          <a className="flex items-center">
+                          <div className="flex items-center">
                             <Image
                               src={item.image}
                               alt={item.name}
@@ -116,7 +116,7 @@ export default function PlaceOrderScreen() {
                             ></Image>
                             &nbsp;
                             {item.name}
-                          </a>
+                          </div>
                         </Link>
                       </td>
                       <td className=" p-5 text-right">{item.quantity}</td>
