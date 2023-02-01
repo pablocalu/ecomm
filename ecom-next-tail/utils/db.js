@@ -2,6 +2,9 @@ import mongoose from 'mongoose'
 
 const connection = {}
 
+
+mongoose.set("strictQuery", false)
+
 async function connect (){
     if (connection.isConnected){
         console.log('Already connected');

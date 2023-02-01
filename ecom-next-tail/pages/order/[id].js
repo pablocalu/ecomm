@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useReducer } from 'react';
 import { toast } from 'react-toastify';
-import Layout from '../../components/Layout';
-import { getError } from '../../utils/error';
+import Layout from '@/components/Layout';
+import { getError } from '@/utils/errors';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -190,7 +190,6 @@ function OrderScreen() {
                 <div className="alert-error">Not delivered</div>
               )}
             </div>
-
             <div className="card p-5">
               <h2 className="mb-2 text-lg">Payment Method</h2>
               <div>{paymentMethod}</div>
@@ -200,7 +199,6 @@ function OrderScreen() {
                 <div className="alert-error">Not paid</div>
               )}
             </div>
-
             <div className="card overflow-x-auto p-5">
               <h2 className="mb-2 text-lg">Order Items</h2>
               <table className="min-w-full">
