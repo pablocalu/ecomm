@@ -66,10 +66,10 @@ export default function Layout({ title, children }) {
                               <DropdownLink className='dropdown-link' href='/profile'>Profile</DropdownLink>
                             </Menu.Item>
                             <Menu.Item>
-                              <a href="#" onClick={logoutClickHandler}>Order History</a>
+                              <DropdownLink className='dropdown-link' href='/order-history'>Order History</DropdownLink>
                             </Menu.Item>
                             <Menu.Item>
-                              <DropdownLink className='dropdown-link' href='/order-history'>Logout</DropdownLink>
+                              <a href="#" onClick={logoutClickHandler}>Logout</a>
                             </Menu.Item>
                           </Menu.Items>
                         </Menu>

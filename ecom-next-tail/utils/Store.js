@@ -26,7 +26,7 @@ function reducer(state, action){
             const cartItemsRemoved = state.cart.cartItems.filter((item) => item.slug !== action.payload.slug)
             Cookies.set('cart', JSON.stringify({...state.cart, cartItems: cartItemsRemoved}))
             return {...state, cart: {...state.cart, cartItems: cartItemsRemoved}};
-        }
+        };
         case 'CART_RESET':
             return {
                 ...state,
@@ -34,6 +34,17 @@ function reducer(state, action){
                     cartItems: [],
                     shippingAdress : { location: {} },
                     paymentMethod: ''
+                }
+            };
+        case 'SAVE_SHIPPING_ADDRESS':
+            return {
+                ...state,
+                cart: {
+                    ...state.cart,
+                    shippingAddress : {
+                        ...state.cart.shippingAddress,
+                        ...action.payload
+                    }
                 }
             };
         default:
