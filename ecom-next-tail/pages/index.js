@@ -30,15 +30,18 @@ export default function Home({ products, featuredProducts }) {
 
   return (
     <Layout title="Home Page">
+      <div className='relative'>
        <Carousel showThumbs={false} autoPlay showStatus={false}>
         {featuredProducts.map((product) => (
-          <div key={product._id}>
+          <div key={product._id} >
               <p className="flex">
                 <img src={product.image} alt={product.name}/>
               </p>
           </div>
         ))}
       </Carousel> 
+
+      </div>
       <h2 className="h2 my-4">Latest Products</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (

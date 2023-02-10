@@ -45,7 +45,7 @@ export default function Layout({ title, children }) {
 
       <ToastContainer position="bottom-center" limit={1} />
 
-      <div className="flex min-h-screen flex-col justify-between ">
+      <div className="flex min-h-screen flex-col justify-between">
         <header>
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
             <Link href="/">
@@ -64,11 +64,11 @@ export default function Layout({ title, children }) {
                       placeholder="Search products"
                     />
                     <button
-                      className="rounded rounded-tl-none rounded-bl-none bg-amber-300 p-1 text-sm dark:text-black"
+                      className="rounded rounded-tl-none rounded-bl-none bg-amber-600 p-1 text-sm dark:text-black"
                       type="submit"
                       id="button-addon2"
                     >
-                      <SearchIcon className="h-5 w-5"></SearchIcon>
+                      <SearchIcon className="h-5 w-5 "></SearchIcon>
                     </button>
                   </form>
                   : null
@@ -92,7 +92,7 @@ export default function Layout({ title, children }) {
                   <Menu.Button className="text-blue-600">
                     {session.user.name}
                   </Menu.Button>
-                  <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
+                  <Menu.Items className="absolute right-0 w-40 origin-top-right bg-white  shadow-lg ">
                     <Menu.Item>
                       <DropdownLink className="dropdown-link" href="/profile">
                         Profile

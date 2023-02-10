@@ -102,7 +102,7 @@ export default function Search(props) {
     router.push('/cart');
   };
   return (
-    <Layout title="search">
+    <Layout title="Search">
       <div className="grid md:grid-cols-4 md:gap-5">
         <div>
           <div className="my-3">
@@ -192,11 +192,13 @@ export default function Search(props) {
           <div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3  ">
               {products.map((product) => (
+                !product.isFeatured ?
                 <ProductItem
                   key={product._id}
                   product={product}
                   addToCartHandler={addToCartHandler}
-                />
+                /> :
+                null
               ))}
             </div>
             <ul className="flex">
