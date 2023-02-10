@@ -16,7 +16,6 @@ const data = {
         }
     ],
     products : [
-
         {
             name: 'Free Shirt',
             slug: 'free-shirt',
@@ -27,7 +26,8 @@ const data = {
             rating: 4.5,
             numReviews: 8,
             countInStock: 20,
-            description: 'A popular Shirt'
+            description: 'A popular Shirt',
+            isFeatured: false
         },
         {
             name: 'Fit Shirt',
@@ -39,7 +39,8 @@ const data = {
             rating: 3.2,
             numReviews: 10,
             countInStock: 20,
-            description: 'A popular Shirt'
+            description: 'A popular Shirt',
+            isFeatured: false
         },
         {
             name: 'Golf Pants',
@@ -51,7 +52,8 @@ const data = {
             rating: 2.9,
             numReviews: 13,
             countInStock: 20,
-            description: 'Smart looking pants'
+            description: 'Smart looking pants',
+            isFeatured: false
         },
         {
             name: 'Fit Pants',
@@ -63,13 +65,40 @@ const data = {
             rating: 3.5,
             numReviews: 7,
             countInStock: 20,
-            description: 'Some pants from Zara Store'
+            description: 'Some pants from Zara Store',
+            isFeatured: false
         },
         {
             name: 'Remeron',
             slug: 'remerita',
             category: 'Shirts',
-            image: '/images/remerita.jpg',
+            image: '/images/carousel1.png',
+            price: 250,
+            brand: 'Nike',
+            rating: 4.5,
+            numReviews: 8,
+            countInStock: 20,
+            description: 'A popular Shirt',
+            isFeatured: true
+        },
+        {
+            name: 'Remeron',
+            slug: 'remerita2',
+            category: 'Shirts',
+            image: '/images/carousel2.png',
+            price: 250,
+            brand: 'Nike',
+            rating: 4.5,
+            numReviews: 8,
+            countInStock: 20,
+            description: 'A popular Shirt',
+            isFeatured: true
+        },
+        {
+            name: 'Remeron',
+            slug: 'remerita3',
+            category: 'Shirts',
+            image: '/images/carousel3.png',
             price: 250,
             brand: 'Nike',
             rating: 4.5,

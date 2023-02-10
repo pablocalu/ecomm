@@ -38,7 +38,7 @@ export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title ? title + ' - Amazona' : 'Amazona'}</title>
+        <title>{title ? title + ' - Casual' : 'Casual'}</title>
         <meta name="description" content="Ecommerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -49,7 +49,7 @@ export default function Layout({ title, children }) {
         <header>
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
             <Link href="/">
-              <div className="text-lg font-bold">amazona</div>
+              <div className="text-lg font-bold">CASUAL</div>
             </Link>
                 {
                   session?.user ? 
@@ -129,7 +129,7 @@ export default function Layout({ title, children }) {
                 </Menu>
               ) : (
                 <Link href="/login">
-                  <p className="p-2">Login</p>
+                  <p className="p-0">Login</p>
                 </Link>
               )}
             </div>
@@ -137,7 +137,7 @@ export default function Layout({ title, children }) {
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
-          <p>Copyright © 2022 Amazona</p>
+          <p>Copyright © 2022 Casual - P/C</p>
         </footer>
       </div>
     </>
