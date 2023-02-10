@@ -64,6 +64,19 @@ const data = {
             numReviews: 7,
             countInStock: 20,
             description: 'Some pants from Zara Store'
+        },
+        {
+            name: 'Remeron',
+            slug: 'remerita',
+            category: 'Shirts',
+            image: '/images/remerita.jpg',
+            price: 250,
+            brand: 'Nike',
+            rating: 4.5,
+            numReviews: 8,
+            countInStock: 20,
+            description: 'A popular Shirt',
+            isFeatured: true
         }
     ],
 }
