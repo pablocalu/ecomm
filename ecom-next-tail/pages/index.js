@@ -24,7 +24,6 @@ export default function Home({ products, featuredProducts }) {
       return toast.error('Sorry. Product is out of stock');
     }
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
-
     toast.success('Product added to the cart');
   };
 
